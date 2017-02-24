@@ -1,6 +1,6 @@
 package com.bins.storm;
 
-/*import backtype.storm.topology.BasicOutputCollector;
+import backtype.storm.topology.BasicOutputCollector;
 import backtype.storm.topology.OutputFieldsDeclarer;
 import backtype.storm.topology.base.BaseBasicBolt;
 import backtype.storm.tuple.Fields;
@@ -22,4 +22,4 @@ public class ExclaimBasicBolt extends BaseBasicBolt {
 		declarer.declare(new Fields("excl_sentence"));
 	}
 
-}*/
+}
