@@ -1,4 +1,4 @@
-package com.bins.storm;
+package com.bins.storm.chapterthree;
 
 import backtype.storm.Config;
 import backtype.storm.LocalCluster;
@@ -26,7 +26,7 @@ public class ExclaimBasicTopo {
 
 			LocalCluster cluster = new LocalCluster();
 			cluster.submitTopology("test", conf, builder.createTopology());
-			Utils.sleep(100000);
+			Utils.sleep(10000);
 			cluster.killTopology("test");
 			cluster.shutdown();
 		}

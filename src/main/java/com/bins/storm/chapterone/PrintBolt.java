@@ -1,4 +1,4 @@
-package com.bins.storm;
+package com.bins.storm.chapterone;
 
 import backtype.storm.topology.BasicOutputCollector;
 import backtype.storm.topology.OutputFieldsDeclarer;

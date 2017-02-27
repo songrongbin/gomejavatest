@@ -17,7 +17,6 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
             <version>${spring.version}</version>
-            <scope>runtime</scope>
             <!-- Spring4 抛弃了JCL，使用SLF4J -->
             <exclusions>
                 <exclusion>

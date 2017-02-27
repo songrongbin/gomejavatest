@@ -1,4 +1,4 @@
-package com.bins.storm;
+package com.bins.storm.chapterone;
 
 import java.util.Map;
 import java.util.Random;
@@ -40,6 +40,7 @@ public class SimpleSpout {
      * 初始化collector
      */
     public void open(Map conf, TopologyContext context, SpoutOutputCollector collector) {
+
         this.collector = collector;
     }
     

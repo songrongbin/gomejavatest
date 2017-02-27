@@ -1,4 +1,4 @@
-package com.bins.storm;
+package com.bins.storm.chapterone;
 
 import backtype.storm.spout.SpoutOutputCollector;
 import backtype.storm.task.TopologyContext;
