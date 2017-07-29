@@ -206,4 +206,9 @@ public class DataUtil {
         return i;
     }
 
+    public static Long getCurrentTime() {
+        Date date = new Date();
+        return date.getTime();
+    }
+
 }

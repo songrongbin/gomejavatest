@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- logback.xml info <configuration info="true"> -->
+<configuration>
+
+    <property name="maxHistory" value="30"/>
+
+    <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>[%d{yyyy-MM-dd HH:mm:ss.SSS}][%-5level][%thread][%file:%line] -- %msg%n
+            </pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <!--ERP-->
+    <appender name="erp" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${log.root}/erp_%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>${maxHistory}</maxHistory>
+        </rollingPolicy>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level %logger{50} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="tms" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${log.root}/tms_%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>${maxHistory}</maxHistory>
+        </rollingPolicy>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level %logger{50} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="wms" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${log.root}/wms_%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>${maxHistory}</maxHistory>
+        </rollingPolicy>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level %logger{50} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="refund" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${log.root}/refund_%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>${maxHistory}</maxHistory>
+        </rollingPolicy>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>[%d{yyyy-MM-dd HH:mm:ss.SSS}][%-5level][%thread][%file:%line] -- %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="com.davdian.erp" level="info">
+        <appender-ref ref="erp"/>
+    </logger>
+    <logger name="com.davdian.tms" level="info">
+        <appender-ref ref="tms"/>
+    </logger>
+
+    <logger name="com.davdian.refund" level="info">
+        <appender-ref ref="refund"/>
+    </logger>
+
+    <logger name="org.springframework" level="info"/>
+    <logger name="org.apache.ibatis" level="info"/>
+    <logger name="com.davdian.suppliers" level="info"/>
+    <logger name="com.davdian.tickets" level="info"/>
+
+    <root level="info">
+        <appender-ref ref="stdout"/>
+    </root>
+</configuration>
